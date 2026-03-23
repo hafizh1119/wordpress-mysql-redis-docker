@@ -154,9 +154,7 @@ Menampilkan plugin Redis Object Cache dalam keadaan aktif.
 
 File:
 
-```
-screenshots/redis-connected.png
-```
+![Login](Screenshots/redis-active.png)
 
 Menampilkan status Redis Connected dan Reachable pada menu Settings → Redis.
 
