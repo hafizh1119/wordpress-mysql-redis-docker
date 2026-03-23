@@ -207,13 +207,55 @@ Konfigurasi ini memungkinkan ketiga service berjalan secara terintegrasi dalam s
 
 ## Konfigurasi Redis pada WordPress
 
-Redis diaktifkan melalui file `wp-config.php` dengan konfigurasi berikut:
+Konfigurasi Redis pada WordPress
 
-```php
+Redis digunakan sebagai object cache untuk meningkatkan performa WordPress. Agar WordPress dapat terhubung dengan Redis container, diperlukan konfigurasi tambahan pada file wp-config.php.
+
+Langkah Konfigurasi
+
+Karena container WordPress tidak menyediakan editor seperti nano atau vi, konfigurasi dilakukan melalui command line (CMD) menggunakan perintah Docker.
+
+1. Menghapus konfigurasi Redis lama (jika ada)
+docker exec -it wordpress-docker-wordpress-1 sed -i "/WP_REDIS/d" /var/www/html/wp-config.php
+
+Perintah ini digunakan untuk menghapus konfigurasi Redis yang sebelumnya pernah ditambahkan, untuk menghindari duplikasi.
+
+2. Menambahkan konfigurasi Redis ke wp-config.php
+docker exec -it wordpress-docker-wordpress-1 sh -c "sed -i \"/That's all, stop editing/i define('WP_REDIS_HOST', 'redis');\" /var/www/html/wp-config.php"
+docker exec -it wordpress-docker-wordpress-1 sh -c "sed -i \"/That's all, stop editing/i define('WP_REDIS_PORT', 6379);\" /var/www/html/wp-config.php"
+docker exec -it wordpress-docker-wordpress-1 sh -c "sed -i \"/That's all, stop editing/i define('WP_REDIS_CLIENT', 'predis');\" /var/www/html/wp-config.php"
+
+Konfigurasi tersebut ditempatkan sebelum baris:
+
+/* That's all, stop editing! Happy publishing. */
+3. Restart container WordPress
+docker restart wordpress-docker-wordpress-1
+
+Restart diperlukan agar konfigurasi baru dapat diterapkan.
+
+4. Verifikasi koneksi Redis
+
+Setelah konfigurasi selesai, masuk ke WordPress:
+
+http://localhost:8000/wp-admin
+
+Kemudian buka:
+
+Settings → Redis
+
+Pastikan status menunjukkan:
+
+Connected
+Redis: Reachable
+Penjelasan Konfigurasi
 define('WP_REDIS_HOST', 'redis');
 define('WP_REDIS_PORT', 6379);
 define('WP_REDIS_CLIENT', 'predis');
-```
+WP_REDIS_HOST digunakan untuk menunjuk ke service Redis dalam Docker network.
+WP_REDIS_PORT adalah port default Redis.
+WP_REDIS_CLIENT digunakan untuk menentukan client Redis yang digunakan oleh WordPress.
+
+Konfigurasi ini memungkinkan WordPress berkomunikasi dengan Redis container melalui Docker networking.
 
 Konfigurasi ini memungkinkan WordPress terhubung ke Redis container melalui Docker network.
 
