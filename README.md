@@ -144,7 +144,7 @@ PONG
 
 File:
 
-![Login](Screenshots/plugins.png)
+![Login](Screenshots/redise-active.png)
 
 Menampilkan plugin Redis Object Cache dalam keadaan aktif.
 
@@ -154,7 +154,7 @@ Menampilkan plugin Redis Object Cache dalam keadaan aktif.
 
 File:
 
-![Login](Screenshots/redis-active.png)
+![Login](Screenshots/plugins.png)
 
 Menampilkan status Redis Connected dan Reachable pada menu Settings → Redis.
 
