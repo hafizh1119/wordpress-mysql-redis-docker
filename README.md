@@ -294,6 +294,12 @@ Penjelasan:
 
 Konfigurasi ini memungkinkan WordPress berkomunikasi dengan Redis container melalui Docker networking.
 
+### Hasil Konfigurasi wp-config.php
+
+![wp-config](Screenshots/konfig.png)
+
+Gambar di atas menunjukkan bahwa konfigurasi Redis telah berhasil ditambahkan ke dalam file wp-config.php sebelum baris "stop editing".
+
 
 ## Data Persistence
 
