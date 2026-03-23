@@ -88,7 +88,7 @@ Lakukan proses instalasi WordPress hingga selesai.
 File:
 
 ```
-<img width="1919" height="970" alt="Screenshot 2026-03-23 203614" src="https://github.com/user-attachments/assets/dec0af0c-830a-4630-82a9-d0f895b8cdc1" />
+![Login](Screenshots/login.png)
 
 ```
 
