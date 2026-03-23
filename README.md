@@ -87,10 +87,8 @@ Lakukan proses instalasi WordPress hingga selesai.
 
 File:
 
-```
 ![Login](Screenshots/login.png)
 
-```
 
 Menampilkan halaman awal instalasi WordPress saat pertama kali diakses.
 
@@ -100,9 +98,7 @@ Menampilkan halaman awal instalasi WordPress saat pertama kali diakses.
 
 File:
 
-```
-screenshots/dashboard.png
-```
+![Login](Screenshots/dashboard.png)
 
 Menampilkan halaman admin WordPress setelah login berhasil.
 
@@ -112,9 +108,7 @@ Menampilkan halaman admin WordPress setelah login berhasil.
 
 File:
 
-```
-screenshots/docker-ps.png
-```
+![Login](Screenshots/docker-ps.png)
 
 Perintah yang digunakan:
 
@@ -130,9 +124,7 @@ Menunjukkan bahwa ketiga container berjalan dengan baik.
 
 File:
 
-```
-screenshots/redis-ping.png
-```
+![Login](Screenshots/redis-CLI.png)
 
 Perintah:
 
@@ -152,9 +144,7 @@ PONG
 
 File:
 
-```
-screenshots/plugin-redis.png
-```
+![Login](Screenshots/plugins.png)
 
 Menampilkan plugin Redis Object Cache dalam keadaan aktif.
 
