@@ -144,7 +144,7 @@ PONG
 
 File:
 
-![Login](Screenshots/redise-active.png)
+![Login](Screenshots/redis-active.png)
 
 Menampilkan plugin Redis Object Cache dalam keadaan aktif.
 
